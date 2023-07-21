@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'DM Sans';
+    font-weight: 400;
+  }
+
+  @font-face {
+    font-family: 'DM Sans';
+    font-weight: 500;
+  }
+
+  @font-face {
+    font-family: 'DM Sans';
+    font-weight: 700;
+    src: url('/fonts/AvertaStd-Bold.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'trirong';
+    font-weight: 700;
+    src: url('/fonts/Trirong-Bold.ttf') format('truetype');
+    font-display: swap;
+  }
+
+  input[type='text']:focus {
+    box-shadow: none;
+    border: 0 !important;
+  }
+
+  h1 {
+    @apply text-h1 font-bold;
+  }
+
+  h2 {
+    @apply text-h2 font-bold;
+  }
+
+  h3 {
+    @apply text-h3 font-semibold;
+  }
+
+  h4 {
+    @apply text-h4 font-semibold;
+  }
+
+  h5 {
+    @apply text-h5 font-semibold;
+  }
+
+  h6 {
+    @apply text-h6 font-semibold;
+  }
+}
+
+/* @layer components { */
+/* react-select */
+
+.react-select__control {
+  @apply box-border min-h-[2.5rem] border-surface-background !important;
+}
+
+.react-select__indicator-separator {
+  @apply hidden !important;
+}
+
+.react-select__indicator {
+  @apply text-secondary !important;
+}
+
+.react-select__menu-list {
+  @apply scrollbar p-3 !important;
+}
+
+.react-select__menu {
+  @apply rounded-lg !important;
+}
+
+.react-select__option {
+  @apply rounded-lg p-3 text-h6 font-semibold transition !important;
+}
+
+.react-select__value-container {
+  @apply px-4 py-1 text-h6 font-semibold !important;
+}
+
+.react-select__single-value {
+  @apply text-primary !important;
+}
+
+.react-select__menu-notice {
+  @apply py-0 !important;
+}
+
+.react-select-mobile__control {
+  @apply min-h-[2.5rem] border-none !important;
+}
+
+.react-select-mobile__indicator-separator {
+  @apply hidden !important;
+}
+
+.react-select-mobile__indicator {
+  @apply hidden !important;
+}
+
+.react-select-mobile__menu-list {
+  @apply scrollbar p-3 !important;
+}
+
+.react-select-mobile__menu {
+  @apply -left-40 w-60 rounded-lg !important;
+}
+
+.react-select-mobile__option {
+  @apply rounded-lg p-3 text-h6 font-semibold transition !important;
+}
+
+.react-select-mobile__value-container {
+  @apply h-10 rounded-md bg-surface-secondary px-1 py-0 text-h6 font-semibold !important;
+}
+
+.react-select-mobile__single-value {
+  @apply text-primary !important;
+}
+
+.react-select-mobile__menu-notice {
+  @apply py-0 !important;
+}
+
+/* react-datepicker */
+
+.react-datepicker {
+  @apply border-none shadow;
+}
+
+.react-datepicker__month-container {
+  @apply m-6;
+}
+
+.react-datepicker__header {
+  @apply border-0 bg-white p-0;
+}
+
+.react-datepicker__month {
+  @apply m-0 mt-2;
+}
+
+.react-datepicker__day {
+  @apply m-0 h-11 w-11 rounded-full border-none py-3 text-p14 text-primary hover:rounded-full hover:bg-surface-divider;
+}
+
+.react-datepicker__day--selected {
+  @apply bg-primary text-white hover:bg-primary;
+}
+
+.react-datepicker__day--keyboard-selected {
+  @apply bg-surface-divider hover:bg-surface-divider;
+}
+
+.react-datepicker__day--outside-month {
+  @apply text-secondary;
+}
+
+.react-datepicker__day--today {
+  @apply text-p16;
+}
+
+.react-datepicker__day--disabled {
+  @apply bg-white text-secondary hover:cursor-not-allowed;
+}
+
+.react-datepicker__day-name {
+  @apply m-0 w-11 pb-4 pt-6 text-subMicro font-bold uppercase text-secondary;
+}
+
+/* slider */
+
+input[type='range'] {
+  -webkit-appearance: none;
+  margin: 20px 0;
+  width: 100%;
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animation: 0.2s;
+  background: #03a9f4;
+  border-radius: 25px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 1);
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -8px;
+}
+
+input[type='range']:focus::-webkit-slider-runnable-track {
+  background: #03a9f4;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.rangeWrap {
+  position: relative;
+  width: 100%;
+}
+
+.rangeValue {
+  position: absolute;
+  top: -50%;
+}
+
+.rangeValue span {
+  width: 30px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background: #03a9f4;
+  color: #fff;
+  font-size: 12px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 6px;
+}
+
+.rangeValue span:before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10px solid #03a9f4;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  margin-top: -1px;
+}
+
+/* } */
+
+@layer utilities {
+  /* Scroll thumb styles */
+  .scrollbar::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+    /* display: none; */
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #cbd5e0;
+    border-radius: 1rem;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:active {
+    background-color: #a0aec0;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #a0aec0;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Scroll track styles (Background) */
+  .scrollbar::-webkit-scrollbar-track {
+    background: #edf2f7;
+    border-radius: 4px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track:hover,
+  .scrollbar::-webkit-scrollbar-track:active {
+    background: #edf2f7;
+  }
+}
+
+/*.labelContainer {
+  height: 30px;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  padding: 5px;
+}
+
+.labelContainer span {
+  display: block;
+  position: absolute;
+  transform: translateX(0);
+  transition: 1s;
+}
+
+.labelContainer:first-of-type:hover span {
+  width: auto;
+  animation: slide-left 5s linear infinite;
+}
+
+@keyframes slide-left {
+  from {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}*/
+
+.labelContainer {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 5px 0;
+}
+
+.labelContainer span {
+  width: 100%;
+  text-overflow: ellipsis;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  transform: translateX(0);
+  transition: 1s;
+}
+
+.labelContainer:first-of-type:hover span {
+  width: auto;
+  transform: translateX(calc(100px - 105%));
+}
+
+.image-animation {
+  width: 100px;
+  height: 100px;
+  transition: all linear 0.5s;
+  bottom: -24px;
+}
+
+@keyframes slide-down {
+  from {
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slick-slide > div {
+  margin: 0 10px;
+}
+.slick-list {
+  margin: 0 -10px;
+}
+
+.splide__pagination__page {
+  background: #ddd !important;
+}
+
+.splide__pagination__page.is-active {
+  background: #aaa !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.your-class-pagination {
+  transform: translateY(40px);
+}
